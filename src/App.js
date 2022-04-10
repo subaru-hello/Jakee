@@ -1,19 +1,13 @@
-import { useState } from "react";
-import "./App.css";
-import { ChildArea } from "./ChildArea";
+import { React } from "react";
+import { PrimaryButton } from "./components/atoms/buttons/PrimaryButton";
 function App() {
-  const [text, setText] = useState("");
-  const [open, setOpen] = useState(false);
-  const onChangeText = (e) => setText(e.target.value);
-  const onClickOpen = (e) => setOpen(!open);
+  const button = {
+    name: "PrimaryButton",
+    role: "submit",
+  };
   return (
     <div className="App">
-      <input value={text} onChange={onChangeText} />
-      <br />
-      <br />
-      <br />
-      <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} />
+      <PrimaryButton button={button} />
     </div>
   );
 }
